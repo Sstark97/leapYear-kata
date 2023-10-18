@@ -19,7 +19,7 @@ public class LeapYearShould {
             2367, 2371, 2375, 2379, 2383, 2387, 2391, 2395, 2399, 3035, 4099, 4437, 15343
     })
     public void is_not_a_leap_year_because_is_not_divisible_by_four(int year) {
-        Exception exception = assertThrows(LeapYearIsNotDivisibleByFourException.class, () -> {
+        Exception exception = assertThrows(LeapYearException.class, () -> {
             LeapYear.of(year);
         });
 
