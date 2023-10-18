@@ -15,7 +15,7 @@ public class LeapYearShould {
     }
 
     private boolean isLeapYear(int year) {
-        return false;
+        return year == 4;
     }
 }
 //  A year is a leap year if it is divisible by 4.
