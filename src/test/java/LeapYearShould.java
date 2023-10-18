@@ -6,9 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LeapYearShould {
-    @Test
-    public void is_not_a_leap_year() {
-        assertFalse(isLeapYear(1));
+    @ParameterizedTest
+    @ValueSource(ints = {2, 3, 2001, 2005, 3035, 4099, 15343})
+    public void is_not_a_leap_year(int year) {
+        assertFalse(isLeapYear(year));
     }
 
     @ParameterizedTest
