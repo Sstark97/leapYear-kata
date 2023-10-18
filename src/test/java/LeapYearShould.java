@@ -14,15 +14,12 @@ public class LeapYearShould {
         assertFalse(isLeapYear(year));
     }
 
-    // The name of the test is temporal for parallel changing
     @ParameterizedTest(name="Error element {index}: {0} is a leap year")
-    @ValueSource(ints = {2, 3, 200, 300, 427, 431, 435, 439, 500, 600, 700, 900, 1000, 1100, 1300, 1400, 1500, 1700,
-            1800, 1900, 1997, 2001, 2005, 2100, 2200, 2300, 2335, 2339, 2343, 2347, 2351, 2355, 2359, 2363, 2367,
-            2371, 2375, 2379, 2383, 2387, 2391, 2395, 2399, 2500, 2600, 2700, 2900, 3000, 3035, 3100, 3300, 3400, 4099,
-            4437, 15343
+    @ValueSource(ints = {2, 3, 427, 431, 435, 439, 1997, 2001, 2005, 2335, 2339, 2343, 2347, 2351, 2355, 2359, 2363,
+            2367, 2371, 2375, 2379, 2383, 2387, 2391, 2395, 2399, 3035, 4099, 4437, 15343
     })
-    public void is_not_a_leap_year_2(int year) {
-        Exception exception = assertThrows(LeapYearIsNotDivisibleByFourthException.class, () -> {
+    public void is_not_a_leap_year_because_is_not_divisible_by_four(int year) {
+        Exception exception = assertThrows(LeapYearIsNotDivisibleByFourException.class, () -> {
             LeapYear.of(year);
         });
 
