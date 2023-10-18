@@ -15,7 +15,7 @@ public class LeapYearShould {
         assertFalse(isLeapYear(year));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name="Error element {index}: {0} is not a leap year")
     @ValueSource(ints = {4, 8, 12, 16, 1840, 1836, 1996, 2024, 3044, 4444, 8888, 16444, 2028, 2032, 2036, 2040, 2044,
             2048, 2052, 2056, 2060, 2064, 2068, 2072, 2076, 2080, 2084,2340, 2344, 2348, 2352, 2356, 2360, 2364, 2368,
             2372, 2376, 2380, 2384, 2388, 2392, 2396, 2400})
