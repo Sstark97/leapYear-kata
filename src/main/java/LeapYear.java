@@ -1,4 +1,10 @@
 public class LeapYear {
+    private final int year;
+
+    private LeapYear(int year) {
+        this.year = year;
+    }
+
     public static LeapYear of(int year) throws LeapYearException {
         if(!isDivisibleByFour(year)) {
             throw new LeapYearException(year + " is not leap year because is not divisible by 4");
@@ -22,5 +28,9 @@ public class LeapYear {
 
     private static boolean isDivisibleByFour(int year) {
         return year % 4 == 0;
+    }
+
+    public int getYear() {
+        return year;
     }
 }
