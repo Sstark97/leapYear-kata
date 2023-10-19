@@ -42,16 +42,4 @@ public class LeapYearShould {
         LeapYear leapYear = LeapYear.of(year);
         assertEquals(leapYear.getYear(), year);
     }
-
-    private boolean isLeapYear(int year) {
-        if(isNotLeapYear(year)) {
-            return false;
-        }
-        return year % 4 == 0;
-    }
-
-    private static boolean isNotLeapYear(int year) {
-        return year % 4 == 0 && year % 100 == 0 && year % 400 != 0;
-    }
-
 }
