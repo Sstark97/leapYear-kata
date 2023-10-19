@@ -11,7 +11,7 @@ public class LeapYear {
         }else if(isNotLeapYear(year)){
             throw new LeapYearException(year + " is not leap year because is divisible by 4 and 100 but not by 400");
         }
-        return null;
+        return new LeapYear(year);
     }
     // TODO: Rename this method
     private static boolean isNotLeapYear(int year) {
